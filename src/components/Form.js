@@ -18,6 +18,12 @@ class Form extends React.Component {
     })
   }
 
+  handleSubmit = event => {
+    event.preventDefault()
+    let formData = { firstName: this.state.firstName, lastName: this.state.lastName }
+    this.sendFormDataSomewhere(formData)
+  }
+
   render() {
     return (
       <form>
@@ -28,4 +34,4 @@ class Form extends React.Component {
   }
 }
 
-export default Form;
+export default Form
