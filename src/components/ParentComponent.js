@@ -7,23 +7,29 @@ export default class ParentComponent extends Component {
     firstName: "",
     lastName: ""
   };
-  handleFirstName = event => {
+//   handleFirstName = event => {
+//     this.setState({
+//       firstName: event.target.value
+//     });
+//   };
+//   handleLastName = event => {
+//     this.setState({
+//       lastName: event.target.value
+//     });
+//   };
+handleChange=(event)=>{
     this.setState({
-      firstName: event.target.value
-    });
-  };
-  handleLastName = event => {
-    this.setState({
-      lastName: event.target.value
-    });
-  };
+        [event.target.name]: event.target.value
+    })
+}
   render() {
     return (
         <div>
       <Form
         formData={this.state}
-        handleFirstName={this.handleFirstName}
-        handleLastName={this.handleLastName}
+        handleChange={this.handleChange}
+        // handleFirstName={this.handleFirstName}
+        // handleLastName={this.handleLastName}
       />
       <DisplayData formData={this.state}/>
     </div>)
