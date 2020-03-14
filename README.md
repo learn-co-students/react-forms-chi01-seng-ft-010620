@@ -281,7 +281,7 @@ class Form extends React.Component {
 export default Form;
 ```
 
-The above component will render previous form submissionso on the page! We have
+The above component will render previous form submissions on the page! We have
 a fully functioning controlled form.
 
 ## More on Forms
