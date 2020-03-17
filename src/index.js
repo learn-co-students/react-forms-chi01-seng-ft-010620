@@ -1,10 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Form from './components/Form'
-
-ReactDOM.render(
-  <div>
-    <Form />
-  </div>,
-  document.getElementById('root')
-);
+ 
+class ParentComponent extends React.Component {
+  state = {
+    firstName: "",
+    lastName: "",
+  }
+ 
+  handleFirstNameChange = event => {
+    this.setState({
+      firstName: event.target.value
+    })
+  }
+ 
+  handleLastNameChange = event => {
+    this.setState({
+      lastName: event.target.value
+    })
+  }
+ 
+  render() {
+    return (
+      <Form
+        formData={this.state}
+        handleFirstNameChange={this.handleFirstNameChange}
+        handleLastNameChange={this.handleLastNameChange}
+      />
+      
+    )
+  }
+}
+ 
+export default ParentComponent;
